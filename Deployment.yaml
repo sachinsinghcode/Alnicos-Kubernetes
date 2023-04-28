@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: alnicos
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: alnicos
+  template:
+    metadata:
+      name: alnicos-pod
+      labels:
+        app: alnicos
+    spec: 
+      containers:
+        - name: alnicos-container
+          image: ssachinsingh/alnicos:0.0.2
+          ports:
+            - containerPort: 8080
+
+
+
+  
